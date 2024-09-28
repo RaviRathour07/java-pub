@@ -35,7 +35,7 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t github-repo .
-        docker tag ${{ secrets.ECR_REPOSITORY }}:${{ github.sha }} ${{ secrets.ECR_REPOSITORY }}:latest
+        docker tag github-repo:latest 559050231342.dkr.ecr.ap-south-1.amazonaws.com/github-repo:latest
 
     - name: Push Docker image to ECR
       run: |
