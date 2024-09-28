@@ -43,6 +43,7 @@ jobs:
     
     - name: Build Docker image
       run: |
+        cd /home/runner/work/jenkins-pr/jenkins-pr/webapp/target/
         docker build -t github-repo .
         docker tag github-repo:latest 559050231342.dkr.ecr.ap-south-1.amazonaws.com/github-repo:latest
 
