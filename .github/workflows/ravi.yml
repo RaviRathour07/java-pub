@@ -25,7 +25,7 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
-        name: build-artifact
+        name: war-file
         path: /home/runner/work/jenkins-pr/jenkins-pr/webapp/target/*.war
 
     - name: Configure AWS credentials
