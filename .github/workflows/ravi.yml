@@ -34,5 +34,5 @@ jobs:
     - name: Build the Docker image
       run: |
            docker build -t github-repo .
-           docker push docker.io/library/github-repo
+           docker push 559050231342.dkr.ecr.ap-south-1.amazonaws.com/github-repo:latest
            
