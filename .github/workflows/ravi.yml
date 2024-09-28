@@ -39,6 +39,6 @@ jobs:
 
     - name: Push Docker image to ECR
       run: |
-        docker push docker push 559050231342.dkr.ecr.ap-south-1.amazonaws.com/github-repo:latest
+        docker push 559050231342.dkr.ecr.ap-south-1.amazonaws.com/github-repo:latest
         ${{ secrets.ECR_REPOSITORY }}:latest
            
