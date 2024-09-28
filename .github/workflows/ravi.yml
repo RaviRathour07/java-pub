@@ -55,8 +55,7 @@ jobs:
         ECR_REPOSITORY: github-repo
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        kubectl rollout restart deployment/regapp-deployment
-    - 
+        kubectl rollout restart deployment/regapp-deployment 
     
     
            
