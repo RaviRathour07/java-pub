@@ -31,8 +31,14 @@ jobs:
     - name: Log in to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-    - name: Build the Docker image
+    
+    - name: Build Docker image
       run: |
-           docker build -t github-repo .
-           docker push 559050231342.dkr.ecr.ap-south-1.amazonaws.com/github-repo:latest
+        docker build -t ${{ secrets.ECR_REPOSITORY }}:${{ github.sha }} .
+        docker tag ${{ secrets.ECR_REPOSITORY }}:${{ github.sha }} ${{ secrets.ECR_REPOSITORY }}:latest
+
+    - name: Push Docker image to ECR
+      run: |
+        docker push ${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+        docker push ${{ secrets.ECR_REPOSITORY }}:latest
            
