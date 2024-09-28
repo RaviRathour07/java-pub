@@ -23,7 +23,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Upload build artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: build-artifact
         path: /home/runner/work/jenkins-pr/jenkins-pr/webapp/target/*.war
