@@ -22,6 +22,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact
+        path: target/*.war
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
