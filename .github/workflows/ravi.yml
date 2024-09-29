@@ -31,15 +31,6 @@ jobs:
     - name: List build directory contents
       run: ls -la /home/runner/work/jenkins-pr/jenkins-pr/webapp/target
 
-    - name: Download build artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: war-file
-        path: ./artifact
-
-    - name: List build directory contents
-      run: ls -la /home/runner/work/jenkins-pr/jenkins-pr/artifact
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
