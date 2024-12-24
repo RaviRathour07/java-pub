@@ -27,19 +27,19 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: validate with Maven
       run: mvn validate
-    - name: Build with Maven
+    - name: compile with Maven
       run: mvn compile
-    - name: Build with Maven
+    - name: test with Maven
       run: mvn test
-    - name: Build with Maven
+    - name: package with Maven
       run: mvn package
-    - name: Build with Maven
+    - name: verify with Maven
       run: mvn verify
-    - name: Build with Maven
+    - name: install with Maven
       run: mvn install
-    - name: Build with Maven
+    - name: deploy with Maven
       run: mvn deploy
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
