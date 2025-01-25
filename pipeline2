@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    
+    environment{
+        cc = """${sh( returnStdout:true, script: 'echo "Ravi Rathour"')}"""
+        exit_status = """${sh( returnStatus:true, script: 'exit 1')}"""
+    }
+    
+    stages{
+        stage('eample'){
+            environment{
+                DEBUG_FLAGS='-g'
+            }
+            steps{
+                sh 'printenv'
+            }
+        }
+    }
+}
