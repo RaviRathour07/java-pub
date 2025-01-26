@@ -7,6 +7,17 @@ pipeline{
     }
     
     stages{
+        stage('Validation'){
+            steps {
+                sh 'mvn -B package --file pom.xml'
+            }
+        }
+        stage('Compile'){
+            steps{
+                sh 'mvn compile'
+            }
+        }
+        
         stage('eample'){
             environment{
                 DEBUG_FLAGS='-g'
